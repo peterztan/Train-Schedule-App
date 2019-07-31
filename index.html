@@ -12,26 +12,26 @@
 </head>
 
 <body>
-    <div class="container text-light jumbotron-transparent rounded">
-        <div id="header" class="jumbotron text-center shadow-lg mb-5 bg-transparent rounded">
-            <h1>Train Scheduler</h1>
-            <h5>Please fill out the information below</h5>
+    <div class="container jumbotron card card-cascade wider text-center shadow-lg mb-5 rounded">
+        <div class="view view-cascade gradient-card-header blue-gradient">
+            <h1 class="card-header-title mb-3">Train Scheduler</h1>
+            <h5 class="mb-0 pb-3 pt-2">Please fill out the information below</h5>
         </div>
     </div>
-    <div class="container text-light jumbotron-transparent rounded">
-        <div class="card shadow-lg mb-5 bg-transparent rounded">
-            <h5 class="card-header">
+    <div class="container card card-cascade narrower shadow-lg mb-3 p-3">
+        <div class="view view-cascade gradient-card-header yellow-gradient">
+            <h5 class="card-header-title text-center">
                 Current Train Schedule
             </h5>
-            <div class="card-body"></div>
+            <hr>
+            <div id="train-table" class="form card-body card-body-cascade"></div>
         </div>
-    </div>
-    <div class="container text-light jumbotron-transparent rounded">
-        <div class="card shadow-lg mb-5 bg-transparent rounded">
-            <h5 class="card-header">
+        <div class="view view-cascade gradient-card-header yellow-gradient">
+            <h5 class="card-header-title text-center">
                 Add Train
             </h5>
-            <div class="card-body form">
+            <hr>
+            <div class="form card-body card-body-cascade">
                 <div class="form-group">
                     <label for="trainNameInput">Train Name</label>
                     <input type="text" class="form-control" id="trainNameInput">
@@ -42,13 +42,13 @@
                 </div>
                 <div class="form-group">
                     <label for="firstTrainTimeInput">First Train Time (HH:mm - military time)
-                        <input type="text" class="form-control" id="firstTrainTimeInput">
+                        <input type="time" class="form-control" id="firstTrainTimeInput">
                 </div>
                 <div class="form-group">
                     <label for="frequencyInput">Frequency (min)
-                        <input type="text" class="form-control" id="frequencyInput">
+                        <input type="time" class="form-control" id="frequencyInput">
                 </div>
-                <button type="submit">submit</button>
+                <button id="addTrain" type="submit" class="btn btn-danger">submit</button>
             </div>
         </div>
     </div>
@@ -63,6 +63,7 @@
         crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <script src="./assets/javascript/app.js"></script>
 </body>
 
